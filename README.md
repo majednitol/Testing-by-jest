@@ -6,3 +6,7 @@ npm i --force
 ```bash
 npx jest
 ```
+## Clone this repo by this command
+```bash
+git clone https://github.com/majednitol/Testing-by-jest.git
+```
