@@ -1,7 +1,7 @@
 import { Counter } from './Counter';
 
 describe('Counter', () => {
-    // creating a object (instance of Counter) type variable
+// creating a object (instance of Counter) type variable
   let counter: Counter;
 
   beforeEach(() => {
