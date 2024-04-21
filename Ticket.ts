@@ -8,7 +8,7 @@ export class Ticket {
   private _totalTicket: number;
   private _password: string;
   private email: string;
-  private _login: boolean;
+  private _IsLogin: boolean;
 
   constructor() {
     this._numberOfTicket = 0;
@@ -16,7 +16,7 @@ export class Ticket {
     this._perTicketPrice = 50;
     this._carringWeight = 0;
     this._totalTicket = 50;
-    this._login = false;
+    this._IsLogin = false;
   }
 
   getTicketInfo(): { buyerName: string, numberOfTicket: number, price: number, carringWeight: number } {
@@ -29,10 +29,11 @@ export class Ticket {
   }
 
   buyTicket(buyerName: string, numberOfTicket: number, carringWeight: number): void {
-    if (this._login===true) {
+    let discount = ((this._perTicketPrice * numberOfTicket) * 3)/100
+    if (this._IsLogin===true) {
       if (this._totalTicket >= numberOfTicket) {
         if (numberOfTicket >= 5) {
-          this._price = this._perTicketPrice * numberOfTicket - ((this._perTicketPrice * numberOfTicket) * 17) / 100;
+          this._price = this._perTicketPrice * numberOfTicket - discount;
   
           if (this._carringWeight >= 100) {
             this._price += (this._price * 5) / 100;
@@ -71,12 +72,11 @@ export class Ticket {
   login(email: string, password: string): any {
   
      ( this.email === email && this._password=== password) ?
-      this._login = true : this._login = false;
+      this._IsLogin = true : this._IsLogin = false;
    
-    return this._login;
+    return this._IsLogin;
       
     
   }
+  
 }
-
-

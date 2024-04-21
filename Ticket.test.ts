@@ -26,7 +26,7 @@ describe('Ticket', () => {
   });
   it('should buy tickets unsuccessful when logged in with insufficient total tickets', function () {
     ticket.createAccount('test3@example.com', 'password','jamal');
-    ticket.login('test@example.com', 'password'); 
+    ticket.login('test3@example.com', 'password'); 
     ticket.buyTicket(ticket.getTicketInfo().buyerName, 400, 10);
   });
 });
