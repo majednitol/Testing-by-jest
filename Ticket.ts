@@ -43,14 +43,14 @@ export class Ticket {
           this._carringWeight = carringWeight;
           // this._price = price;
           this._totalTicket -= numberOfTicket;
-          console.log(this.getTicketInfo())
+          console.log("Ticket info :",this.getTicketInfo())
         } else {
           this.buyerName = buyerName;
           this._numberOfTicket = numberOfTicket;
           this._carringWeight = carringWeight;
           this._price = this._perTicketPrice * numberOfTicket;
           this._totalTicket -= numberOfTicket;
-          console.log(this.getTicketInfo())
+          console.log("Ticket info :",this.getTicketInfo())
         }
       } else {
         throw("Insufficient number of tickets");
@@ -75,8 +75,6 @@ export class Ticket {
       this._IsLogin = true : this._IsLogin = false;
    
     return this._IsLogin;
-      
-    
   }
   
 }
