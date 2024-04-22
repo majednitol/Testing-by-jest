@@ -21,12 +21,12 @@ describe('Ticket', () => {
     expect(ticket.getTicketInfo().buyerName).toBe('akash'); 
     expect(ticket.getTicketInfo().numberOfTicket).toBe(40); 
    
-    expect(ticket.getTicketInfo().carringWeight).toBe(10); 
+    expect(ticket.getTicketInfo().luggageWeight).toBe(400); 
     
   });
   it('should buy tickets unsuccessful when logged in with insufficient total tickets', function () {
     ticket.createAccount('test3@example.com', 'password','jamal');
     ticket.login('test3@example.com', 'password'); 
-    ticket.buyTicket(ticket.getTicketInfo().buyerName, 400, 10);
+    ticket.buyTicket(ticket.getTicketInfo().buyerName, 60, 10);
   });
 });
