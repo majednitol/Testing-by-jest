@@ -5,12 +5,11 @@ describe('Ticket', () => {
 
   beforeEach(() => {
     ticket = new Ticket();
-    
   });
 
   it('should not allow buying tickets if not logged in', function () {
     ticket.createAccount('test1@example.com', 'password','tamim');
-    ticket.login('test@example.com', 'password');
+    // ticket.login('test@example.com', 'password');
    ticket.buyTicket(ticket.getTicketInfo().buyerName, 10, 100); 
     });
 

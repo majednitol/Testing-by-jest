@@ -1,4 +1,3 @@
-
 export class Ticket {
   private buyerName: string;
   private _numberOfTicket: number;
