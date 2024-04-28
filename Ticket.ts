@@ -77,3 +77,7 @@ export class Ticket {
   }
   
 }
+    let ticket = new Ticket() 
+    ticket.createAccount('test4@example.com', 'password','jamal');
+    ticket.login('test4@example.com', 'password'); 
+    ticket.buyTicket(ticket.getTicketInfo().buyerName, 50, 10);
