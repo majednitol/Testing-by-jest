@@ -13,7 +13,7 @@ describe('Ticket', () => {
    ticket.buyTicket(ticket.getTicketInfo().buyerName, 10, 100); 
     });
 
-  it('should buy tickets successful when logged in with sufficient total tickets', function () {
+  it('should buy tickets successful when logged in with sufficient available tickets', function () {
     ticket.createAccount('test2@example.com', 'password','akash');
     ticket.login('test2@example.com', 'password'); 
     ticket.buyTicket(ticket.getTicketInfo().buyerName, 40, 10);
@@ -23,7 +23,7 @@ describe('Ticket', () => {
     expect(ticket.getTicketInfo().luggageWeight).toBe(400); 
     
   });
-  it('should buy tickets unsuccessful when logged in with insufficient total tickets', function () {
+  it('should buy tickets unsuccessful when logged in with insufficient available tickets', function () {
     ticket.createAccount('test3@example.com', 'password','jamal');
     ticket.login('test3@example.com', 'password'); 
     ticket.buyTicket(ticket.getTicketInfo().buyerName, 60, 10);
