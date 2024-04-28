@@ -6,13 +6,9 @@ git clone https://github.com/majednitol/Testing-by-jest.git
 ```bash
 npm i --force
 ```
-## Build project
+## Build and Run project
 ```bash
-tsc
-```
-## Run project 
-```bash
-node Ticket.js
+tsc && node Ticket.js
 ```
 ## testing command
 ```bash
