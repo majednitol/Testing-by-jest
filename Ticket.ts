@@ -1,7 +1,7 @@
 export class Ticket {
   private buyerName: string;
   private _numberOfTicket: number;
-  private _price: number;
+  private _totalPrice: number;
   private _perTicketPrice: number;
   private _luggageWeight: number;
   private _totalTicket: number;
@@ -11,7 +11,7 @@ export class Ticket {
 
   constructor() {
     this._numberOfTicket = 0;
-    this._price = 0;
+    this._totalPrice = 0;
     this._perTicketPrice = 50;
     this._luggageWeight = 0;
     this._totalTicket = 50;
@@ -22,7 +22,7 @@ export class Ticket {
     return {
       buyerName: this.buyerName,
       numberOfTicket: this._numberOfTicket,
-      price: this._price,
+      price: this._totalPrice,
       luggageWeight: this._luggageWeight
     };
   }
@@ -32,10 +32,10 @@ export class Ticket {
     if (this._IsLogin) {
       if (this._totalTicket >= numberOfTicket) {
         if (numberOfTicket >= 5) {
-          this._price = this._perTicketPrice * numberOfTicket - discount;
+          this._totalPrice = this._perTicketPrice * numberOfTicket - discount;
   this._luggageWeight = carringWeight * numberOfTicket
           if (this._luggageWeight >= 100) {
-            this._price += (this._price * 5) / 100;
+            this._totalPrice += (this._totalPrice * 5) / 100;
           }
           this.buyerName = buyerName;
           this._numberOfTicket = numberOfTicket;
@@ -47,7 +47,7 @@ export class Ticket {
           this.buyerName = buyerName;
           this._numberOfTicket = numberOfTicket;
           this._luggageWeight = carringWeight;
-          this._price = this._perTicketPrice * numberOfTicket;
+          this._totalPrice = this._perTicketPrice * numberOfTicket;
           this._totalTicket -= numberOfTicket;
           console.log("Ticket info :",this.getTicketInfo())
         }
